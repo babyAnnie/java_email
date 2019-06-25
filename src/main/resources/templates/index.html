@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>邮箱页面</title>
+        <style type="text/css">
+            body{
+                text-align: center;
+                background-color: lightskyblue;
+                font-family:"Microsoft YaHei UI";
+            }
+            hr{
+                color:dodgerblue;
+            }
+            h1{
+                color: azure;
+                line-height: 100px;
+            }
+            span{
+                color: dodgerblue;
+                font-weight: bold;
+            }
+            form{
+                font-size: large;
+                line-height: 30px;
+            }
+            input{
+                font-size: 15px;
+                text-align: center;
+            }
+            .send{
+                display: inline-block;
+                color: gold;
+                font-size: 20px;
+                font-weight: bold;
+                background-color: snow;
+                width: 200px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><em>-------欢迎进入邮箱页面-------</em></h1>
+        <hr/>
+        <!--/*@thymesVar id="emailInfo" type="com.example.demo.domain.EmailInfo"*/-->
+        <form action="#" th:action="@{/send-email}" th:object="${emailInfo}"  method="post">
+            <span>发件人：阿棱&lt;2829139244@qq.com&gt;</span><br/>
+            <span>请输入收件人的邮箱: </span><input type="text" th:field="${emailInfo.emailAddress}" /><br />
+            <span>请输入该邮件的主题: </span><input type="text" th:field="${emailInfo.subject}" /><br />
+            <span>请输入要发送的正文:</span><br>
+            <textarea rows="10" cols="40" th:field="${emailInfo.content}"}></textarea><br />
+            <span>&nbsp;&nbsp;&nbsp;请选择附件:</span>
+            <input type="file"></input>
+            <br/><br>
+            <input type="submit" class="send" value="&nbsp;发&nbsp;&nbsp;送&nbsp;"/>
+        </form>
+    </body>
+</html>

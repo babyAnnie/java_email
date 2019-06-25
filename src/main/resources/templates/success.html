@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发送成功！</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+            background-color: lightskyblue;
+        }
+        h1{
+            text-align: center;
+            color: pink;
+        }
+        p{
+            text-align: center;
+            color:lightyellow;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <h1>***发送成功啦***</h1>
+    <div>
+        <p th:text="${result}"></p>
+    </div>
+</body>
+</html>
